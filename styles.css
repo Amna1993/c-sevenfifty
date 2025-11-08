@@ -538,3 +538,150 @@ body {
     }
   }
     
+  /* Mission Vision */
+
+  /* === Mission & Vision (framed, 90% width) === */
+.mv { margin: 60px auto 0; width: 90%; max-width: 1100px; }
+.mv-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.mv-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  box-shadow: 0 8px 22px rgba(0,0,0,.06);
+  padding: 24px 22px;
+}
+.mv-card h2 { margin: 0 0 8px; font-size: 22px; }
+.mv-card p { color: #444; line-height: 1.65; }
+
+@media (max-width: 900px) {
+  .mv-wrap { grid-template-columns: 1fr; }
+}
+
+/* === Core Values === */
+.values { margin: 40px auto 0; width: 90%; max-width: 1100px; }
+.values-wrap {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  box-shadow: 0 8px 22px rgba(0,0,0,.06);
+  padding: 26px 22px;
+}
+.values h2 { margin: 0 0 16px; font-size: 26px; }
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.value-card {
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 16px;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.value-card h3 { margin: 0 0 6px; font-size: 18px; }
+.value-card p { color: #555; line-height: 1.6; }
+.value-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0,0,0,.07);
+}
+
+@media (max-width: 1000px) {
+  .values-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .values-grid { grid-template-columns: 1fr; }
+}
+
+/* === Strategic Goals (details/summary accordions) === */
+.goals { margin: 40px auto 60px; width: 90%; max-width: 1100px; }
+.goals-wrap {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  box-shadow: 0 8px 22px rgba(0,0,0,.06);
+  padding: 26px 22px;
+}
+.goals h2 { margin: 0 0 16px; font-size: 26px; }
+
+.goal {
+  border: 1px solid #eee;
+  border-radius: 12px;
+  margin: 10px 0;
+  overflow: hidden;
+  background: #fafafa;
+}
+.goal summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  user-select: none;
+}
+.goal summary::-webkit-details-marker { display: none; }
+.goal summary span { flex: 1; }
+.goal[open] summary { background: #f3f4f6; border-bottom: 1px solid #e5e7eb; }
+.goal p { margin: 0; padding: 14px 16px 16px; color: #444; line-height: 1.65; }
+
+/* Small accent bar on left when open */
+.goal { position: relative; }
+.goal[open]::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 4px;
+  background: #4f46e5;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+/* === About Section === */
+.about {
+    width: 90%;
+    max-width: 1100px;
+    margin: 60px auto;
+  }
+  
+  .about-box {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+    padding: 40px 30px;
+    text-align: left;
+  }
+  
+  .about h2 {
+    font-size: 28px;
+    margin-bottom: 16px;
+    color: #111;
+  }
+  
+  .about p {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+  
+  .about strong {
+    color: #4f46e5;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .about-box {
+      padding: 28px 20px;
+    }
+    .about h2 {
+      font-size: 24px;
+    }
+  }
+  
