@@ -23,12 +23,13 @@ body {
     padding: 18px 40px;
   }
   
-  .logo {
-    font-size: 26px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: #fff;
-  }
+  /* LOGO */
+.logo img {
+    height: 70px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+}
   
   nav ul {
     list-style: none;
