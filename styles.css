@@ -698,154 +698,238 @@ body {
     --shadow:0 10px 28px rgba(16,24,40,.07);
   }
   
-  /* ---------- CEO ---------- */
-  .ceo {
-    width: 90%;
+  /* ============================================
+   CEO SECTION
+   ============================================ */
+
+.ceo {
     max-width: 1100px;
     margin: 60px auto;
-  }
-  
-  .ceo-card {
-    display: grid;
-    grid-template-columns: 360px 1fr;   /* fixed image column */
-    border: 1px solid var(--line);
-    border-radius: 16px;
+    padding: 0 20px;
+}
+
+.ceo-card {
+    display: flex;
+    gap: 32px;
+    border-radius: 22px;
     background: var(--panel);
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-soft);
+    padding: 32px;
+    border: 1px solid var(--line);
+    align-items: stretch;
+}
+
+/* CEO IMAGE BLOCK */
+.ceo-image {
+    flex: 0 0 320px;
+    height: 320px;
+    border-radius: 18px;
     overflow: hidden;
-    align-items: stretch;               /* equal column heights */
-  }
-  
-  /* Keep a consistent portrait ratio for the CEO image */
-  .ceo-image {
-    position: relative;
-    background: #f3f4f6;
-    overflow: hidden;
-  }
-  .ceo-image::before {
-    content: "";
+    background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ceo-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
     display: block;
-    aspect-ratio: 4 / 5;                /* uniform portrait shape */
-  }
-  .ceo-image img {
-    position: absolute; inset: 0;
-    width: 100%; height: 100%;
-    object-fit: cover;                  /* no distortion */
-    object-position: 50% 25%;           /* bias up; keeps face centered */
-    display: block;
-  }
-  
-  .ceo-content {
-    padding: 32px 36px;
+}
+
+/* CEO TEXT SIDE */
+.ceo-content {
+    flex: 1;
     color: var(--text);
-  }
-  .ceo-content h2 {
+}
+
+.ceo-content h2 {
     margin: 0 0 8px;
     font-size: 26px;
     color: var(--ink);
-  }
-  .ceo-content h3 {
+}
+
+.ceo-content h3 {
     margin: 0 0 14px;
     font-size: 18px;
     color: var(--ink);
     font-weight: 700;
-  }
-  .ceo-content p {
+}
+
+.ceo-content p {
     line-height: 1.75;
-  }
-  
-  /* CEO — responsive */
-  @media (max-width: 980px) {
-    .ceo-card { grid-template-columns: 1fr; }
-    .ceo-image::before { aspect-ratio: 16 / 10; } /* wider crop on phones */
-  }
-  
-  /* ---------- TEAM ---------- */
-  .team {
-    width: 90%;
+    margin: 0 0 10px;
+}
+
+/* ============================================
+   TEAM SECTION
+   ============================================ */
+
+.team {
     max-width: 1100px;
-    margin: 60px auto;
-  }
-  .team .team-wrap h2 {
+    margin: 60px auto 80px;
+    padding: 0 20px;
+}
+
+.team-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.team-wrap h2 {
     font-size: 28px;
-    margin: 0 0 18px;
-    color: var(--ink);
-  }
-  
-  .team-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-  
-  /* One card = fixed photo column + text column */
-  .member-card {
-    display: grid;
-    grid-template-columns: 320px 1fr;   /* fixed image column */
-    border: 1px solid var(--line);
-    border-radius: 14px;
-    background: var(--panel);
-    box-shadow: var(--shadow);
-    overflow: hidden;
-    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
-  }
-  .member-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 16px 36px rgba(16,24,40,.10);
-    border-color: #dfe2ea;
-  }
-  
-  /* Uniform portrait shape for every headshot */
-  .member-photo {
-    position: relative;
-    background: #f3f4f6;
-    overflow: hidden;
-  }
-  .member-photo::before {
-    content: "";
-    display: block;
-    aspect-ratio: 4 / 5;                /* same as CEO for consistency */
-  }
-  .member-photo img {
-    position: absolute; inset: 0;
-    width: 100%; height: 100%;
-    object-fit: cover;
-    object-position: 50% 25%;
-    display: block;
-  }
-  
-  /* Text side */
-  .member-body { padding: 28px; }
-  .member-body h3 {
     margin: 0 0 6px;
+    color: var(--ink);
+}
+
+.team-wrap p.section-intro {
+    margin: 0 0 8px;
+    color: var(--muted);
+    max-width: 640px;
+}
+
+/* Cards stacked vertically */
+.team-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* One member card */
+.member-card {
+    display: flex;
+    gap: 28px;
+    border-radius: 20px;
+    background: var(--panel);
+    box-shadow: var(--shadow-soft);
+    padding: 24px 24px;
+    border: 1px solid var(--line);
+    align-items: stretch;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.member-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+    border-color: #d1d5db;
+}
+
+/* Photo column */
+.member-photo {
+    flex: 0 0 260px;
+    height: 260px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+}
+
+/* Text column */
+.member-body {
+    flex: 1;
+    padding: 4px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.member-body h3 {
+    margin: 0;
     font-size: 22px;
     color: var(--ink);
-    letter-spacing: .2px;
-  }
-  .member-role {
-    margin: 0 0 14px;
-    color: #1f2937;
+    letter-spacing: 0.2px;
+}
+
+.member-role {
+    margin: 0;
+    color: var(--accent);
     font-weight: 700;
-  }
-  .member-cred {
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.member-cred {
     list-style: none;
     padding: 0;
-    margin: 0 0 16px;
+    margin: 4px 0 8px;
     display: grid;
-    gap: 6px;
-    color: #344053;
-    font-size: 14.5px;
-  }
-  .member-body p {
+    gap: 4px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.member-body p {
     color: var(--text);
     line-height: 1.75;
-    margin: 0 0 12px;
-  }
-  
-  /* Team — responsive */
-  @media (max-width: 1024px) {
-    .member-card { grid-template-columns: 1fr; }
-    .member-photo::before { aspect-ratio: 16 / 10; } /* landscape crop on phones */
-  }
-  
-  
+    margin: 0;
+    font-size: 15px;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .menu-container {
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
+    .ceo-card,
+    .member-card {
+        flex-direction: column;
+    }
+
+    .ceo-image,
+    .member-photo {
+        width: 100%;
+        height: 260px;
+    }
+}
+
+@media (max-width: 640px) {
+    .menu-bar.white-theme {
+        width: 94%;
+        margin-top: 24px;
+    }
+
+    .menu-container {
+        padding: 14px 18px;
+    }
+
+    .ceo,
+    .team {
+        margin: 40px auto 60px;
+        padding: 0 16px;
+    }
+
+    .ceo-card,
+    .member-card {
+        padding: 18px 16px;
+        gap: 18px;
+    }
+
+    .member-photo {
+        height: 220px;
+    }
+}
